@@ -30,7 +30,6 @@
             margin-bottom: 10px;
         }
 
-        /* Galería Estilo Polaroids */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -96,29 +95,29 @@
 <body>
 
     <audio id="love-song" loop>
-        <!-- Cambia 'cancion.mp3' por el nombre de tu archivo de música -->
         <source src="cancion.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
         <h1>11 Meses a tu lado</h1>
         
-        <button id="music-btn" onclick="playMusic()">❤️ Presiona para nuestra canción</button>
+        <!-- TEXTO ACTUALIZADO AQUÍ -->
+        <button id="music-btn" onclick="playMusic()">❤️ Te dedico esta cancion mi gordita preciosa</button>
 
         <div class="gallery">
-            <!-- He puesto los nombres de las 12 fotos que me pasaste -->
-            <div class="photo-frame"><img src="1.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="2.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="3.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="4.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="5.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="6.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="7.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="8.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="9.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="10.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="11.jpg" alt="Amor"></div>
-            <div class="photo-frame"><img src="12.jpg" alt="Amor"></div>
+            <!-- REVISA QUE TUS FOTOS SE LLAMEN 1.jpg, 2.jpg, etc. -->
+            <div class="photo-frame"><img src="1.jpg"></div>
+            <div class="photo-frame"><img src="2.jpg"></div>
+            <div class="photo-frame"><img src="3.jpg"></div>
+            <div class="photo-frame"><img src="4.jpg"></div>
+            <div class="photo-frame"><img src="5.jpg"></div>
+            <div class="photo-frame"><img src="6.jpg"></div>
+            <div class="photo-frame"><img src="7.jpg"></div>
+            <div class="photo-frame"><img src="8.jpg"></div>
+            <div class="photo-frame"><img src="9.jpg"></div>
+            <div class="photo-frame"><img src="10.jpg"></div>
+            <div class="photo-frame"><img src="11.jpg"></div>
+            <div class="photo-frame"><img src="12.jpg"></div>
         </div>
 
         <div id="message"></div>
@@ -131,7 +130,7 @@
             document.getElementById('music-btn').innerHTML = "🎶 Sonando para ti...";
         }
 
-        const text = "Felices 11 meses, mi niña hermosa. Gracias por aparecer en mi vida y por cada momento que hemos compartido, a pesar de la distancia. Eres la persona más especial que conozco y estoy muy orgulloso de ti, sobre todo por cómo estás enfrentando todo ahora. Siempre estaré aquí para apoyarte, abrazarte (aunque sea a la distancia por ahora) y amarte. ¡Vamos por mucho más!";
+        const text = "Felices 11 meses, mi niña hermosa. Gracias por aparecer en mi vida y por cada momento que hemos compartido, a pesar de la distancia. Eres la persona más especial que conozco y estoy muy orgulloso de ti. Siempre estaré aquí para apoyarte y amarte. ¡Vamos por mucho más!";
         
         let index = 0;
         function typeText() {
@@ -142,10 +141,8 @@
             }
         }
         
-        // Iniciar el texto cuando cargue la página
         window.onload = typeText;
 
-        // Lluvia de corazones
         setInterval(() => {
             const h = document.createElement('div');
             h.classList.add('heart');
