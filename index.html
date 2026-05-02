@@ -112,7 +112,6 @@
         <button id="music-btn" onclick="playMusic()">❤️ Te dedico esta cancion mi gordita preciosa</button>
 
         <div class="gallery">
-            <!-- Nombres de archivos actualizados según tu captura -->
             <div class="photo-frame"><img src="WhatsApp Image 2026-05-02 at 2.33.27 PM.jpeg" alt="Amor"></div>
             <div class="photo-frame"><img src="image_8a251e.jpg" alt="Amor"></div>
             <div class="photo-frame"><img src="image_8a2578.jpg" alt="Amor"></div>
@@ -142,7 +141,8 @@
             if (index < text.length) {
                 document.getElementById('message').innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeText, 60);
+                // AQUÍ SE CAMBIÓ DE 60 A 30 PARA MÁS VELOCIDAD
+                setTimeout(typeText, 30);
             }
         }
         
