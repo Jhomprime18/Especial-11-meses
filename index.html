@@ -68,15 +68,23 @@
             font-weight: bold;
             box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
             margin: 20px 0;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         #message {
             font-size: 1.2rem;
             line-height: 1.8;
             color: #444;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 15px;
+            min-height: 100px;
         }
 
         .heart {
@@ -101,23 +109,23 @@
     <div class="container">
         <h1>11 Meses a tu lado</h1>
         
-        <!-- TEXTO ACTUALIZADO AQUÍ -->
+        <!-- BOTÓN ACTUALIZADO -->
         <button id="music-btn" onclick="playMusic()">❤️ Te dedico esta cancion mi gordita preciosa</button>
 
         <div class="gallery">
-            <!-- REVISA QUE TUS FOTOS SE LLAMEN 1.jpg, 2.jpg, etc. -->
-            <div class="photo-frame"><img src="1.jpg"></div>
-            <div class="photo-frame"><img src="2.jpg"></div>
-            <div class="photo-frame"><img src="3.jpg"></div>
-            <div class="photo-frame"><img src="4.jpg"></div>
-            <div class="photo-frame"><img src="5.jpg"></div>
-            <div class="photo-frame"><img src="6.jpg"></div>
-            <div class="photo-frame"><img src="7.jpg"></div>
-            <div class="photo-frame"><img src="8.jpg"></div>
-            <div class="photo-frame"><img src="9.jpg"></div>
-            <div class="photo-frame"><img src="10.jpg"></div>
-            <div class="photo-frame"><img src="11.jpg"></div>
-            <div class="photo-frame"><img src="12.jpg"></div>
+            <!-- NOTA TÉCNICA: Si tus fotos terminan en .jpeg en GitHub, cámbialas aquí también -->
+            <div class="photo-frame"><img src="1.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="2.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="3.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="4.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="5.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="6.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="7.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="8.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="9.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="10.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="11.jpg" alt="Amor"></div>
+            <div class="photo-frame"><img src="12.jpg" alt="Amor"></div>
         </div>
 
         <div id="message"></div>
@@ -126,7 +134,7 @@
     <script>
         function playMusic() {
             const audio = document.getElementById('love-song');
-            audio.play();
+            audio.play().catch(e => console.log("Error al reproducir audio:", e));
             document.getElementById('music-btn').innerHTML = "🎶 Sonando para ti...";
         }
 
