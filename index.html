@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Felices 11 Meses Mi Amor ❤️</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>11 Meses de Puro Amor ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #ff4081;
-            --secondary: #c2185b;
-            --bg-gradient: linear-gradient(-45deg, #fce4ec, #f8bbd0, #f48fb1, #ffc1e3);
+            --pink-bright: #ff0077;
+            --pink-dark: #4a001f;
+            --glass: rgba(255, 255, 255, 0.15);
         }
 
         body {
             margin: 0;
             padding: 0;
             font-family: 'Montserrat', sans-serif;
-            background: var(--bg-gradient);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background: radial-gradient(circle at center, #880e4f 0%, #2a0011 100%);
+            color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,128 +25,138 @@
             min-height: 100vh;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Lluvia de partículas en el fondo */
+        #particles {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
         }
 
         .container {
             text-align: center;
-            padding: 40px 20px;
-            max-width: 1000px;
+            padding: 50px 20px;
+            max-width: 1100px;
             z-index: 2;
         }
 
         h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 4rem;
-            color: var(--secondary);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-            animation: float 3s ease-in-out infinite;
+            font-size: 5rem;
+            color: #ff80ab;
+            text-shadow: 0 0 20px rgba(255, 128, 171, 0.6);
+            margin-bottom: 10px;
+            animation: pulseTitle 2s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes pulseTitle {
+            0%, 100% { transform: scale(1); text-shadow: 0 0 20px rgba(255, 128, 171, 0.6); }
+            50% { transform: scale(1.05); text-shadow: 0 0 40px rgba(255, 128, 171, 0.9); }
         }
 
-        /* Estilo del Botón Mejorado */
         #music-btn {
-            background: linear-gradient(45deg, #ff4081, #f50057);
+            background: linear-gradient(45deg, #ff0077, #ff5c8d);
             color: white;
             border: none;
-            padding: 18px 35px;
+            padding: 20px 45px;
             border-radius: 50px;
             cursor: pointer;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            box-shadow: 0 10px 20px rgba(245, 0, 87, 0.3);
-            margin: 30px 0;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            box-shadow: 0 0 30px rgba(255, 0, 119, 0.5);
+            margin-bottom: 50px;
+            transition: 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         #music-btn:hover {
-            transform: scale(1.1);
-            box-shadow: 0 15px 30px rgba(245, 0, 87, 0.5);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 0 50px rgba(255, 0, 119, 0.8);
         }
 
-        /* Galería con Diseño Gráfico */
+        /* Galería Estilo "Collage Tirado" */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 25px;
-            margin: 40px 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin: 50px 0;
         }
 
         .photo-frame {
             background: white;
-            padding: 12px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            border: 2px solid rgba(255, 255, 255, 0.5);
+            padding: 12px 12px 40px 12px;
+            border-radius: 5px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: 0.4s;
+            width: 220px;
         }
 
+        /* Rotaciones aleatorias para estilo gráfico */
+        .photo-frame:nth-child(odd) { transform: rotate(-3deg); }
+        .photo-frame:nth-child(even) { transform: rotate(3deg); }
+
         .photo-frame:hover {
-            transform: translateY(-15px) rotate(3deg);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            transform: scale(1.2) rotate(0deg);
+            z-index: 10;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
         }
 
         .photo-frame img {
             width: 100%;
-            height: 220px;
+            height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            border: 1px solid #ddd;
         }
 
-        /* Mensaje con Glassmorphism */
+        /* Caja de Mensaje Estilo Neon */
         #message-box {
-            background: rgba(255, 255, 255, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 8px 32px rgba(194, 24, 91, 0.15);
-            margin-top: 40px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 2px solid #ff0077;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: inset 0 0 20px rgba(255, 0, 119, 0.3), 0 0 20px rgba(255, 0, 119, 0.2);
+            margin-top: 60px;
+            position: relative;
         }
 
         #message {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             line-height: 1.8;
-            color: #5c001e;
-            font-weight: 500;
-            margin: 0;
+            color: #ffe4ee;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
 
-        /* Corazones Animados */
-        .heart {
+        /* Animación de Corazones */
+        .heart-particle {
             position: absolute;
+            color: #ff4081;
+            font-size: 20px;
             pointer-events: none;
-            z-index: 1;
-            animation: moveUp 5s linear infinite;
+            animation: fly 6s linear infinite;
+            opacity: 0;
         }
 
-        @keyframes moveUp {
-            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+        @keyframes fly {
+            0% { transform: translateY(0) translateX(0) rotate(0deg); opacity: 0; }
             10% { opacity: 0.8; }
             90% { opacity: 0.8; }
-            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+            100% { transform: translateY(-100vh) translateX(50px) rotate(360deg); opacity: 0; }
         }
     </style>
 </head>
 <body>
+
+    <div id="particles"></div>
 
     <audio id="love-song" loop>
         <source src="cancion.mp3" type="audio/mpeg">
     </audio>
 
     <div class="container">
-        <h1>11 Meses a tu lado</h1>
+        <h1>11 Meses Contigo</h1>
         
         <button id="music-btn" onclick="playMusic()">❤️ Te dedico esta canción mi gordita preciosa</button>
 
@@ -173,7 +182,7 @@
         function playMusic() {
             const audio = document.getElementById('love-song');
             audio.play().catch(e => console.log("Audio play error"));
-            document.getElementById('music-btn').innerHTML = "🎶 Con mucho amor para ti...";
+            document.getElementById('music-btn').innerHTML = "💖 Nuestra canción sonando...";
         }
 
         const text = "Felices 11 meses, mi niña hermosa. Gracias por aparecer en mi vida y por cada momento que hemos compartido, a pesar de la distancia. Eres la persona más especial que tengo y estoy muy orgulloso de ti. Por como afrontas todo, por el tiempo que me dedicas, por como me amas. Quiero muchos meses mas contigo incluso años gracias por tanto mi amor sin mas disfruta de la cancion que te dedique :3 ";
@@ -183,27 +192,33 @@
             if (index < text.length) {
                 document.getElementById('message').innerHTML += text.charAt(index);
                 index++;
-                setTimeout(typeText, 30); // Velocidad rápida (30ms)
+                setTimeout(typeText, 30); // Velocidad rápida
             }
         }
         
-        window.onload = typeText;
+        window.onload = () => {
+            typeText();
+            startHearts();
+        };
 
-        // Generador de lluvia de corazones variados
-        function createHeart() {
-            const symbols = ['❤️', '💖', '💕', '✨', '🌸'];
-            const h = document.createElement('div');
-            h.classList.add('heart');
-            h.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-            h.style.left = Math.random() * 100 + 'vw';
-            h.style.fontSize = Math.random() * 30 + 15 + 'px';
-            h.style.animationDuration = (Math.random() * 3 + 4) + 's';
-            h.style.filter = `hue-rotate(${Math.random() * 50}deg)`;
-            document.body.appendChild(h);
-            setTimeout(() => h.remove(), 6000);
+        function startHearts() {
+            const container = document.getElementById('particles');
+            const symbols = ['❤️', '💖', '💕', '🔥', '✨'];
+            
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.classList.add('heart-particle');
+                heart.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.top = '100vh';
+                heart.style.fontSize = (Math.random() * 20 + 15) + 'px';
+                heart.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                heart.style.opacity = Math.random();
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 6000);
+            }, 300);
         }
-
-        setInterval(createHeart, 250); // Más corazones y más frecuentes
     </script>
 </body>
 </html>
